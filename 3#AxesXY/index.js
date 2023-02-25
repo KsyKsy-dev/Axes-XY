@@ -1,21 +1,17 @@
 let axisX = 296;
 let axisY = 296;
 let direction = document.getElementById("point");
-const generateAxis = () => {
+const generateValue = () => {
   return Math.floor(Math.random() * 2);
 };
-const generateAxisValue = () => {
-  return Math.floor(Math.random() * 2);
-};
+
 const changeAxisValue = () => {
-  generateAxis()
+  generateValue()
     ? (console.log("X"),
-      generateAxisValue()
-        ? (axisX++, console.log("x + 1 =  ", axisX))
-        : axisX--,
+      generateValue() ? (axisX++, console.log("x + 1 =  ", axisX)) : axisX--,
       console.log("x - 1 =", axisX))
     : (console.log("Y"),
-      generateAxisValue() ? (axisY++, console.log("y + 1 =", axisY)) : axisY--,
+      generateValue() ? (axisY++, console.log("y + 1 =", axisY)) : axisY--,
       console.log("y - 1 =", axisY));
   console.log(" out", axisX, axisY);
   direction.style.left = axisX + "px";
